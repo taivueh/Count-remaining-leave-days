@@ -35,9 +35,26 @@ rows.forEach((row) => {
 const remainingLeaveHours = totalLeaveHours - usedLeaveHours;
 const remainingLeaveDays = remainingLeaveHours / hoursPerDay;
 
-alert(`You have ${remainingLeaveDays.toFixed(2)} leave days remaining.`);
-
-console.log(`You have ${remainingLeaveDays.toFixed(2)} leave days remaining.`);
-console.log(
-  `You have ${remainingLeaveHours.toFixed(2)} leave hours remaining.`
-);
+if (remainingLeaveDays === 0) {
+  alert("You used all your leave days.");
+  console.log("You used all your leave days.");
+} else if (remainingLeaveDays < 0) {
+  alert(
+    `You have taken over your leave days by ${Math.abs(
+      remainingLeaveDays
+    ).toFixed(2)} days.`
+  );
+  console.log(
+    `You have taken over your leave days by ${Math.abs(
+      remainingLeaveDays
+    ).toFixed(2)} days.`
+  );
+} else {
+  alert(`You have ${remainingLeaveDays.toFixed(2)} leave days remaining.`);
+  console.log(
+    `You have ${remainingLeaveDays.toFixed(2)} leave days remaining.`
+  );
+  console.log(
+    `You have ${remainingLeaveHours.toFixed(2)} leave hours remaining.`
+  );
+}
