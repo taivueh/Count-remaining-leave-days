@@ -1,10 +1,5 @@
 const hoursPerDay = 8;
-const totalLeaveDays = parseInt(
-  prompt(
-    "Enter your total leave days(Not sure? Check the Leave Policy on Confluence):"
-  ),
-  10
-);
+const totalLeaveDays = parseInt(prompt("Enter your total leave days:"), 10);
 const totalLeaveHours = totalLeaveDays * hoursPerDay;
 
 const currentYear = new Date().getFullYear();
